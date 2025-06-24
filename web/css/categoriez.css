@@ -1,0 +1,92 @@
+.category-link{
+  text-decoration: none;
+}
+
+.categories {
+
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  max-width: 1400px;
+  margin-top: 5%;
+  padding: 20px;
+}
+
+
+.category {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: center;
+
+  cursor: pointer;
+
+  width: 320px;
+  height: 400px;
+}
+
+.article-title{
+  color: white !important;
+  backdrop-filter: blur(3px);
+  height: 50px;
+  width: 100%;
+    padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.article-title h1{
+  color: white;
+}
+
+.category-link{
+  color: white;
+}
+
+.ctg{
+  background-image: url('../imgs/may.png');
+  background-repeat:no-repeat ;
+  background-size: cover;
+  background-position: center;
+}
+
+.ctg1{
+  background-image: url('../imgs/dove.jpg');
+  background-repeat:no-repeat ;
+  background-size: cover;
+  background-position: center;
+}
+
+.ctg2{
+  background-image: url('../imgs/salut.jpg');
+  background-repeat:no-repeat ;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.category:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+   background-color: rgb(255, 255, 255);
+}
+
+
+.article-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+

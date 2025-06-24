@@ -1,0 +1,187 @@
+
+
+h1 {
+    font-family: 'PT Serif', serif; /* Монументальный шрифт для заголовка */
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+/* --- B. Контейнер карты и лэйаут --- */
+.map-container {
+    width: 100%;
+    margin-top: 2%;
+    padding: 20px;
+
+    border-radius: 5px;
+
+    position: relative; /* Для позиционирования индикатора года */
+}
+
+#map {
+    width: 100%;
+    height: 65vh; /* Высота относительно экрана */
+    min-height: 500px;
+    border-radius: 8px;
+    background-color: #333; /* Фон, пока тайлы не загрузились */
+}
+
+/* --- C. Индикатор года на карте --- */
+#current-year-display {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'PT Serif', serif;
+    font-size: 10vw; /* Размер зависит от ширины экрана */
+    max-font-size: 120px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.08); /* Очень прозрачный белый */
+    margin: 0;
+    pointer-events: none; /* Не мешает кликать по карте */
+}
+
+/* --- D. Панель управления --- */
+.map-controls {
+    /* Расположение и размеры */
+    max-width: 1200px;
+    margin: 30px auto 0 auto; /* Увеличили отступ сверху для воздуха */
+    padding: 10px 20px;
+
+    /* УБИРАЕМ ФОН, РАМКИ И ТЕНИ */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+
+    /* Flexbox для выравнивания */
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Немного увеличим расстояние */
+}
+
+/* --- E. Кнопка Play/Pause (минималистичная) --- */
+#play-pause-button {
+    background-color: transparent; /* Прозрачный фон */
+    border: 2px solid #777; /* Тонкая серая рамка */
+    color: #a0a0a0; /* Серый цвет иконки */
+    width: 44px; /* Чуть меньше */
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+#play-pause-button:hover {
+    border-color: #dedede; /* Белая рамка при наведении */
+    color: #cccccc; /* Белая иконка при наведении */
+    transform: scale(1.05);
+}
+#play-pause-button svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+.icon-pause {
+    display: none;
+}
+
+/* --- G. Отображение даты (минималистичное) --- */
+#current-date {
+    background-color: #343434 !important;
+    color: #c0c0c0; /* Приглушенный цвет текста */
+    padding: 0; /* Убираем внутренние отступы */
+    font-size: 1.5em; /* Делаем цифры крупнее и выразительнее */
+    font-weight: 400; /* Более тонкое начертание */
+    min-width: 130px;
+    text-align: center;
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums; /* Чтобы цифры не "прыгали" при смене */
+}
+
+
+/* --- F. Слайдер (минималистичный) --- */
+#timeline-slider {
+    flex-grow: 1;
+}
+.noUi-target {
+    background: #444; /* Темно-серая полоса-трек */
+    border: none;
+    box-shadow: none;
+    height: 3px; /* Делаем линию очень тонкой */
+}
+.noUi-connect {
+    background: #a52a2a; /* Акцентный красный цвет для пройденного пути */
+}
+.noUi-handle {
+    border: none; /* Убираем рамку */
+    border-radius: 50%;
+    background: #e0e0e0; /* Яркий белый кружок */
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    cursor: grab;
+    width: 18px; /* Делаем ползунок меньше */
+    height: 18px;
+    top: -18px; /* Корректируем положение */
+    right: -9px;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    top: -11px;
+}
+
+.noUi-handle:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(165, 42, 42, 0.5); /* Подсветка при фокусе */
+}
+.noUi-handle::before,
+.noUi-handle::after {
+    display: none;
+}
+
+/* --- G. Отображение даты --- */
+#current-date {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 8px 12px;
+    border-radius: 6px;
+    min-width: 110px;
+    text-align: center;
+}
+
+/* --- H. Всплывающие окна на карте (Popups) --- */
+.leaflet-popup-content-wrapper {
+    background: #2b2b2b; /* Темный фон для попапа */
+    color: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border: 1px solid #444;
+}
+.leaflet-popup-tip {
+    background: #2b2b2b;
+}
+.battle-balloon h3 {
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    font-family: 'PT Serif', serif;
+}
+.battle-balloon p {
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+.battle-balloon a {
+    color: #c04040; /* Яркий красный для ссылки */
+    text-decoration: none;
+    font-weight: bold;
+}
+.battle-balloon a:hover {
+    text-decoration: underline;
+}
