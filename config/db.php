@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=ww2',
+    'dsn' => 'mysql:host=localhost;dbname=ww3',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
